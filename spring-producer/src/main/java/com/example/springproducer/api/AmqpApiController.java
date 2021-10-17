@@ -1,6 +1,6 @@
 package com.example.springproducer.api;
 
-import com.example.springproducer.dto.Message;
+import com.example.springproducer.dto.MessageQueue;
 import com.example.springproducer.service.AmqpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +18,7 @@ public class AmqpApiController {
 
     @ResponseStatus(HttpStatus.ACCEPTED)
     @PostMapping(value = "/send")
-    public void sendToConsumer(@RequestBody Message message) {
+    public void sendToConsumer(@RequestBody MessageQueue message) {
         service.sendToConsumer(message);
     }
 }
