@@ -33,7 +33,7 @@ public class RePublishRabbitMQ implements AmqpRePublish {
     private String parkingLot;
 
     @Override
-    @Scheduled(cron = "${spring.rabbitmq.listener.time-retry}") // vai ser acionado a partir do horario
+    @Scheduled(cron = "00 00 15 * * *") // vai ser acionado a partir do horario
     public void rePublish() {
         List<Message> messages = getQueueMessages();
 
